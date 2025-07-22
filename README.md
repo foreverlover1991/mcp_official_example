@@ -8,7 +8,7 @@
 ### 环境搭建与运行步骤
 
 1. **配置 API Key**  
-   在项目根目录下新建 `api_key.py` 文件，内容如下：
+   在项目stdio_trans目录下新建 `api_key.py` 文件，内容如下：
    ```python
    api_key = "sk-xxxxxxxxxxx"  # 替换为你的实际 API Key
    ```
@@ -23,13 +23,13 @@
 
 3. **运行服务端**
    ```bash
-   python3 weather.py
+   python3 stdio_trans/weather.py
    ```
 
 4. **运行客户端**
    ```bash
    # 根据实际路径配置
-   python3 client.py "/pathto/mcp_official_example/weather.py" 
+   python3 stdio_trans/client.py "/pathto/mcp_official_example/weather.py" 
    ```
 
 5. **测试输入**
@@ -71,13 +71,18 @@
 ## 📁 项目结构
 ```
 mcp_official_example/
-├── api_key.py          # 存放 API Key
-├── weather.py          # 天气模拟服务端
-├── client.py           # 客户端脚本
-├── aliyun_tool.py      # 阿里云调用工具测试脚本
-├── .gitignore          # 忽略文件
-├── requirements.txt    # python模块文件
-└── README.md           # 项目说明文档
+├── stdio_trans/                # 标准输入输出协议
+│   ├── api_key.py              # 存放 API Key
+│   ├── weather.py              # 天气模拟服务端
+│   └── client.py               # 客户端脚本
+│
+├── http_sse_trans/             # HTTP + SSE 混合协议
+│   └── (协议相关实现文件)      # 可根据实际内容补充文件列表
+│
+├── aliyun_tool.py              # 阿里云调用工具测试脚本
+├── .gitignore                  # 忽略文件配置
+├── requirements.txt            # Python 依赖模块列表
+└── README.md                   # 项目说明文档
 ```
 
 ---
